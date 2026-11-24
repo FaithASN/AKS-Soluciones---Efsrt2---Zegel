@@ -1,0 +1,10 @@
+Revisión de la entrega frontend AKS
+
+- JavaScript: node --check aprobado para app.js y server.mjs.
+- Inicio: revisión visual en escritorio y móvil.
+- Servicios: navegación, apertura de consulta específica, cierre por Escape y preguntas frecuentes aprobados.
+- Seguimiento: código vacío, código no encontrado, pedido AKS-DEMO-0001 y pedido AKS-DEMO-0002 aprobados en navegador.
+- Ancho móvil de 390 px: Inicio, Servicios y Seguimiento sin desbordamiento horizontal observado.
+- Menú móvil: apertura y navegación aprobados.
+- Consola de la página de inicio: sin errores registrados durante la revisión.
+- El avance usa datos ficticios; no hay autenticación, persistencia ni integración con API.
