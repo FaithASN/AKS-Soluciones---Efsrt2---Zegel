@@ -1,0 +1,6 @@
+@extends('layouts.publico')
+@section('titulo','Servicios · AKS Soluciones')
+@section('contenido')
+<section class="page-intro section"><div class="container"><span class="eyebrow">SERVICIOS</span><h1>Servicios técnicos para tu equipo</h1><p>Conoce el catálogo de AKS Soluciones. La cotización final depende del diagnóstico.</p></div></section><section class="section"><div class="container">@include('publico.tarjetas',['precios'=>true])</div></section>
+<section class="section faq-section"><div class="container"><div class="section-heading"><span class="eyebrow">PREGUNTAS FRECUENTES</span><h2>Resolvemos tus dudas</h2></div><div class="faq-list"><details open><summary>¿Cuánto demora una reparación?</summary><p>El plazo depende de la falla y los servicios requeridos. Consulta el avance con el código recibido al registrar tu equipo.</p></details><details><summary>¿Cómo consulto el estado de mi equipo?</summary><p>Entra a <a href="{{ route('seguimiento') }}">Seguimiento</a> e ingresa tu código de 32 caracteres. No necesitas una cuenta.</p></details><details><summary>¿Dónde puedo solicitar atención?</summary><p>Visítanos en {{ config('aks.direccion') }}. Confirma en la tienda las condiciones y la garantía del servicio.</p></details></div></div></section>
+@endsection

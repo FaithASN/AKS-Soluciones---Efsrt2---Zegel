@@ -1,0 +1,22 @@
+<?php
+return [
+ 'required'=>'El campo :attribute es obligatorio.',
+ 'required_without'=>'El campo :attribute es obligatorio si no seleccionas :values.',
+ 'email'=>'El campo :attribute debe ser un correo válido.',
+ 'string'=>'El campo :attribute debe contener texto.',
+ 'integer'=>'El campo :attribute debe ser un número entero.',
+ 'numeric'=>'El campo :attribute debe ser numérico.',
+ 'boolean'=>'Selecciona un valor válido para :attribute.',
+ 'array'=>'El campo :attribute debe ser una lista válida.',
+ 'exists'=>'El valor de :attribute no existe o ya no está disponible.',
+ 'unique'=>'El valor de :attribute ya está registrado.',
+ 'confirmed'=>'La confirmación de :attribute no coincide.',
+ 'distinct'=>'No puedes repetir el mismo servicio en la cotización.',
+ 'regex'=>'El formato de :attribute no es válido.',
+ 'date_format'=>'El formato de :attribute no es válido.',
+ 'after_or_equal'=>'El campo :attribute debe ser igual o posterior a :date.',
+ 'decimal'=>'El campo :attribute permite un máximo de dos decimales.',
+ 'min'=>['numeric'=>'El campo :attribute debe ser al menos :min.','string'=>'El campo :attribute debe tener al menos :min caracteres.','array'=>'Debes agregar al menos :min elemento(s).'],
+ 'max'=>['numeric'=>'El campo :attribute no debe superar :max.','string'=>'El campo :attribute no debe superar :max caracteres.','array'=>'No puedes agregar más de :max elementos.'],
+ 'attributes'=>['nombres'=>'nombres y apellidos','nombre'=>'nombre','telefono'=>'teléfono','email'=>'correo electrónico','password'=>'contraseña','perfil_id'=>'perfil','activo'=>'estado de la cuenta','cliente_id'=>'cliente','equipo_id'=>'equipo','tipo'=>'tipo de equipo','falla_reportada'=>'falla reportada','precio_vigente'=>'precio vigente','pedido_id'=>'pedido','items'=>'servicios','items.*.servicio_id'=>'servicio','items.*.cantidad'=>'cantidad','codigo'=>'código de seguimiento','desde'=>'fecha inicial','hasta'=>'fecha final','fecha_cobro'=>'fecha de cobro','importe_cobrado'=>'importe cobrado'],
+];

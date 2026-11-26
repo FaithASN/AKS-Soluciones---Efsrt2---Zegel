@@ -1,0 +1,3 @@
+@extends('pdf.base')
+@section('titulo','Cotización #'.$cotizacion->id)
+@section('contenido')<h2>Cotización #{{ $cotizacion->id }} · Pedido #{{ $cotizacion->pedido_id }}</h2><p>Cliente: {{ $cotizacion->pedido->cliente->nombres }}<br>Equipo: {{ $cotizacion->pedido->equipo->tipo }} {{ $cotizacion->pedido->equipo->marca }} {{ $cotizacion->pedido->equipo->modelo }}<br>Emisión: {{ $cotizacion->fecha_emision->timezone('America/Lima')->format('d/m/Y H:i') }}<br>Responsable: {{ $cotizacion->emisor->nombre }}</p>@include('cotizaciones.detalle')<h3>Observaciones</h3><p class="pre-wrap">{{ $cotizacion->observaciones??'Sin observaciones.' }}</p>@endsection

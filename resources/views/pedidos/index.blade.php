@@ -1,0 +1,7 @@
+@extends('layouts.gestion')
+@section('titulo','Pedidos')
+@section('subtitulo','Consulta y administra los servicios registrados.')
+@section('acciones')@if(auth()->user()->es('ADMINISTRADOR','RECEPCIONISTA'))<a class="btn btn-primary" href="{{ route('pedidos.create') }}">Nuevo pedido</a>@endif @endsection
+@section('contenido')
+<section class="surface"><form class="row g-3 mb-4" method="get"><div class="col-lg-4"><label for="q">Código, cliente o serie</label><input class="form-control" name="q" id="q" value="{{ request('q') }}" maxlength="100"></div><div class="col-lg-2"><label for="estado">Estado</label><select class="form-select" id="estado" name="estado"><option value="">Todos</option>@foreach($estados as $e)<option value="{{ $e->id }}" @selected(request('estado')==$e->id)>{{ $e->nombre }}</option>@endforeach</select></div><div class="col-lg-2"><label for="desde">Desde</label><input class="form-control" type="date" name="desde" id="desde" value="{{ request('desde') }}"></div><div class="col-lg-2"><label for="hasta">Hasta</label><input class="form-control" type="date" name="hasta" id="hasta" value="{{ request('hasta') }}"></div><div class="col-lg-2 d-flex align-items-end gap-2"><button class="btn btn-primary">Filtrar</button><a class="btn btn-outline-light" href="{{ route('pedidos.index') }}">Limpiar</a></div></form>@include('pedidos.tabla'){{ $pedidos->links() }}</section>
+@endsection

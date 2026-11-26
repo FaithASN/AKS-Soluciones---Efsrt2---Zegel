@@ -1,0 +1,5 @@
+@extends('layouts.gestion')
+@section('titulo','Clientes')
+@section('subtitulo','Información de contacto y equipos registrados.')
+@section('acciones')<a class="btn btn-primary" href="{{ route('clientes.create') }}">Nuevo cliente</a>@endsection
+@section('contenido')<section class="surface"><form class="d-flex gap-2 mb-4" method="get"><label for="q" class="visually-hidden">Buscar cliente</label><input class="form-control" name="q" id="q" placeholder="Buscar por nombre o documento" value="{{ request('q') }}" maxlength="100"><button class="btn btn-primary">Buscar</button></form><div class="table-responsive"><table class="table"><thead><tr><th>Cliente</th><th>Documento</th><th>Teléfono</th><th>Correo</th><th>Equipos</th><th>Acción</th></tr></thead><tbody>@forelse($clientes as $c)<tr><td>{{ $c->nombres }}</td><td>{{ $c->documento??'—' }}</td><td>{{ $c->telefono }}</td><td>{{ $c->email??'—' }}</td><td>{{ $c->equipos_count }}</td><td><a href="{{ route('clientes.edit',$c) }}">Editar</a></td></tr>@empty<tr><td colspan="6" class="empty-copy">No hay clientes para esta búsqueda.</td></tr>@endforelse</tbody></table></div>{{ $clientes->links() }}</section>@endsection

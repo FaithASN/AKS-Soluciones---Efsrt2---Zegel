@@ -1,0 +1,4 @@
+@extends('layouts.gestion')
+@section('titulo','Cotización #'.$cotizacion->id)
+@section('acciones')<a class="btn btn-primary" href="{{ route('cotizaciones.pdf',$cotizacion) }}">Descargar PDF</a>@endsection
+@section('contenido')<section class="surface"><dl class="detail-grid"><div><dt>Cliente</dt><dd>{{ $cotizacion->pedido->cliente->nombres }}</dd></div><div><dt>Pedido</dt><dd><a href="{{ route('pedidos.show',$cotizacion->pedido) }}">#{{ $cotizacion->pedido_id }}</a></dd></div><div><dt>Fecha de emisión</dt><dd>{{ $cotizacion->fecha_emision->timezone('America/Lima')->format('d/m/Y H:i') }}</dd></div><div><dt>Emitida por</dt><dd>{{ $cotizacion->emisor->nombre }}</dd></div></dl>@include('cotizaciones.detalle')<h3>Observaciones</h3><p class="pre-wrap mt-2">{{ $cotizacion->observaciones??'Sin observaciones.' }}</p></section>@endsection

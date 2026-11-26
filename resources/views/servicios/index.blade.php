@@ -1,0 +1,5 @@
+@extends('layouts.gestion')
+@section('titulo','Catálogo de servicios')
+@section('subtitulo','Servicios, precios vigentes y disponibilidad en la web pública.')
+@section('acciones')<a class="btn btn-primary" href="{{ route('catalogo.create') }}">Nuevo servicio</a>@endsection
+@section('contenido')<section class="surface"><div class="table-responsive"><table class="table"><thead><tr><th>Servicio</th><th>Precio vigente</th><th>Estado</th><th>Acción</th></tr></thead><tbody>@forelse($servicios as $s)<tr><td><strong>{{ $s->nombre }}</strong><p class="small mt-1 mb-0">{{ $s->descripcion }}</p></td><td class="text-nowrap">S/ {{ number_format((float)$s->precio_vigente,2) }}</td><td><span class="state {{ $s->activo?'state-4':'state-1' }}">{{ $s->activo?'Activo':'Inactivo' }}</span></td><td><a href="{{ route('catalogo.edit',$s) }}">Editar</a></td></tr>@empty<tr><td colspan="4" class="empty-copy">No hay servicios registrados.</td></tr>@endforelse</tbody></table></div>{{ $servicios->links() }}</section>@endsection
